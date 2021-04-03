@@ -31,7 +31,7 @@ class Scrapy:
         try:
             known_ids = picklify.unpickle_ids()
             known_adverts = picklify.unpickle_adverts()
-            total_previosly_adverts = len(known_ids)
+            total_previously_adverts = len(known_ids)
             time_start = time.time()
             for p in range(1, self.pages_to_scrape + 1):
                 ads = network.get_av_adverts(p)
@@ -47,7 +47,7 @@ class Scrapy:
                                   (ad['title'], ad['id']), const.LOG_LEVEL_HIGH)
             utils.log('*' * 80, const.LOG_LEVEL_HIGH)
             res = 'Scraped %d new adverts in %d seconds' \
-                % ((len(known_ids) - total_previosly_adverts), (time.time() - time_start))
+                % ((len(known_ids) - total_previously_adverts), (time.time() - time_start))
             print('-- %s --' % res, const.LOG_LEVEL_HIGH)
             utils.speak(res)
             utils.log('*' * 80, const.LOG_LEVEL_HIGH)

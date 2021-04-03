@@ -14,7 +14,7 @@ def get_av_adverts(page):
 
 def get_av_images(img_urls):
     utils.log('-- Downloading images', const.LOG_LEVEL_HIGH)
-    # only 13 images alowed no need to download more
+    # only 13 images allowed no need to download more
     img_urls = img_urls[:13]
     imgs = []
     for i in img_urls:

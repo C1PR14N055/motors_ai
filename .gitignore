@@ -1,3 +1,7 @@
+# Compiled, random, editor files
 .DS_Store
 .vscode
-__pycache__
+__pycache__/
+
+# Distribution files
+venv/

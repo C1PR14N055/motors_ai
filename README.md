@@ -19,7 +19,7 @@
 #### Linux
 
 ```zsh
-~:$ sudo apt install python3
+➜ sudo apt install python3
 $: pip3 install virtualenv
 $: source venv/bin/activate
 $: pip3 install -r requirements.txt

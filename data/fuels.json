@@ -1,0 +1,32 @@
+[
+  {
+    "ID": 1,
+    "Sort": 0,
+    "Title": "Benzina"
+  },
+  {
+    "ID": 2,
+    "Sort": 0,
+    "Title": "Diesel"
+  },
+  {
+    "ID": 3,
+    "Sort": 0,
+    "Title": "GPL"
+  },
+  {
+    "ID": 4,
+    "Sort": 0,
+    "Title": "Electric"
+  },
+  {
+    "ID": 5,
+    "Sort": 0,
+    "Title": "Etanol"
+  },
+  {
+    "ID": 6,
+    "Sort": 0,
+    "Title": "Hybrid"
+  }
+]

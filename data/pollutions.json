@@ -1,0 +1,42 @@
+[
+  {
+    "ID": 1,
+    "Sort": 0,
+    "Title": "Non-Euro"
+  },
+  {
+    "ID": 2,
+    "Sort": 0,
+    "Title": "Euro 1"
+  },
+  {
+    "ID": 3,
+    "Sort": 0,
+    "Title": "Euro 2"
+  },
+  {
+    "ID": 4,
+    "Sort": 0,
+    "Title": "Euro 3"
+  },
+  {
+    "ID": 5,
+    "Sort": 0,
+    "Title": "Euro 4"
+  },
+  {
+    "ID": 6,
+    "Sort": 0,
+    "Title": "Euro 5"
+  },
+  {
+    "ID": 7,
+    "Sort": 0,
+    "Title": "Euro 6"
+  },
+  {
+    "ID": 8,
+    "Sort": 0,
+    "Title": "Hibrid/Electric"
+  }
+]

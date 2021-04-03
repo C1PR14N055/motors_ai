@@ -1,0 +1,262 @@
+[
+  {
+    "ID": 1,
+    "Sort": 0,
+    "Title": "ABS"
+  },
+  {
+    "ID": 2,
+    "Sort": 0,
+    "Title": "Airbaguri frontale"
+  },
+  {
+    "ID": 3,
+    "Sort": 0,
+    "Title": "Airbaguri frontale si laterale"
+  },
+  {
+    "ID": 4,
+    "Sort": 0,
+    "Title": "CD"
+  },
+  {
+    "ID": 5,
+    "Sort": 0,
+    "Title": "Computer de bord"
+  },
+  {
+    "ID": 6,
+    "Sort": 0,
+    "Title": "Control al stabilitatii"
+  },
+  {
+    "ID": 7,
+    "Sort": 0,
+    "Title": "Geamuri fata electrice"
+  },
+  {
+    "ID": 8,
+    "Sort": 0,
+    "Title": "Inchidere centralizata"
+  },
+  {
+    "ID": 9,
+    "Sort": 0,
+    "Title": "Radio"
+  },
+  {
+    "ID": 10,
+    "Sort": 0,
+    "Title": "Servo directie"
+  },
+  {
+    "ID": 11,
+    "Sort": 0,
+    "Title": "Tavan panoramic"
+  },
+  {
+    "ID": 12,
+    "Sort": 0,
+    "Title": "Aer conditionat"
+  },
+  {
+    "ID": 13,
+    "Sort": 0,
+    "Title": "Airbag genunchi sofer"
+  },
+  {
+    "ID": 14,
+    "Sort": 0,
+    "Title": "Airbag perdea"
+  },
+  {
+    "ID": 15,
+    "Sort": 0,
+    "Title": "Airbaguri spate si laterale"
+  },
+  {
+    "ID": 16,
+    "Sort": 0,
+    "Title": "Alarma"
+  },
+  {
+    "ID": 17,
+    "Sort": 0,
+    "Title": "Bare longitudinale tavan"
+  },
+  {
+    "ID": 18,
+    "Sort": 0,
+    "Title": "Bluetooth"
+  },
+  {
+    "ID": 19,
+    "Sort": 0,
+    "Title": "Camera parcare spate"
+  },
+  {
+    "ID": 20,
+    "Sort": 0,
+    "Title": "Carlig pentru trailer"
+  },
+  {
+    "ID": 21,
+    "Sort": 0,
+    "Title": "Comenzi pe volan"
+  },
+  {
+    "ID": 22,
+    "Sort": 0,
+    "Title": "Controlul tractiunii"
+  },
+  {
+    "ID": 23,
+    "Sort": 0,
+    "Title": "DVD"
+  },
+  {
+    "ID": 24,
+    "Sort": 0,
+    "Title": "Faruri automate"
+  },
+  {
+    "ID": 25,
+    "Sort": 0,
+    "Title": "Faruri xenon"
+  },
+  {
+    "ID": 26,
+    "Sort": 0,
+    "Title": "Geamuri fumurii"
+  },
+  {
+    "ID": 27,
+    "Sort": 0,
+    "Title": "Geamuri fumurii spate"
+  },
+  {
+    "ID": 28,
+    "Sort": 0,
+    "Title": "Geamuri spate electrice "
+  },
+  {
+    "ID": 29,
+    "Sort": 0,
+    "Title": "Imobilizator electronic"
+  },
+  {
+    "ID": 30,
+    "Sort": 0,
+    "Title": "Incalzire auxiliara"
+  },
+  {
+    "ID": 31,
+    "Sort": 0,
+    "Title": "Interior piele"
+  },
+  {
+    "ID": 32,
+    "Sort": 0,
+    "Title": "Interior velur"
+  },
+  {
+    "ID": 33,
+    "Sort": 0,
+    "Title": "AUX"
+  },
+  {
+    "ID": 34,
+    "Sort": 0,
+    "Title": "Roti aluminiu"
+  },
+  {
+    "ID": 35,
+    "Sort": 0,
+    "Title": "Limitator viteza"
+  },
+  {
+    "ID": 36,
+    "Sort": 0,
+    "Title": "Faruri de zi"
+  },
+  {
+    "ID": 37,
+    "Sort": 0,
+    "Title": "Navigatie GPS"
+  },
+  {
+    "ID": 38,
+    "Sort": 0,
+    "Title": "Oglinzi incalzite"
+  },
+  {
+    "ID": 39,
+    "Sort": 0,
+    "Title": "Parbriz incalzit"
+  },
+  {
+    "ID": 40,
+    "Sort": 0,
+    "Title": "Pilot automat"
+  },
+  {
+    "ID": 41,
+    "Sort": 0,
+    "Title": "Faruri ceata"
+  },
+  {
+    "ID": 42,
+    "Sort": 0,
+    "Title": "Scaune fata incalzite"
+  },
+  {
+    "ID": 43,
+    "Sort": 0,
+    "Title": "Scaune spate incalzite"
+  },
+  {
+    "ID": 44,
+    "Sort": 0,
+    "Title": "Senzori parcare"
+  },
+  {
+    "ID": 45,
+    "Sort": 0,
+    "Title": "Sensori parcare spate"
+  },
+  {
+    "ID": 46,
+    "Sort": 0,
+    "Title": "Stergatoare automate"
+  },
+  {
+    "ID": 47,
+    "Sort": 0,
+    "Title": "2 x climatronic"
+  },
+  {
+    "ID": 48,
+    "Sort": 0,
+    "Title": "4 x climatronic"
+  },
+  {
+    "ID": 49,
+    "Sort": 0,
+    "Title": "Head up display"
+  },
+  {
+    "ID": 50,
+    "Sort": 0,
+    "Title": "Oglinda electro cromatica interior"
+  },
+  {
+    "ID": 51,
+    "Sort": 0,
+    "Title": "Oglinzi ajustabile electronic"
+  },
+  {
+    "ID": 52,
+    "Sort": 0,
+    "Title": "Oglinzi electro cromatice exterior"
+  }
+]

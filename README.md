@@ -4,18 +4,6 @@
 
 `Artificial Intelligence` powered cars `crawler`, tracks the cars market prices, make assumptions about cars, show statistics.
 
-### TODO list
-
--   [x] Crawl cars on autovit
--   [x] Categorize cars into custom format for scalability
--   [ ] Normalize, scale, splint data into bins
--   [ ] Machine Leaning price prediction / stats / charts
--   [ ] Flask API
--   [ ] Frontend
--   [ ] Raspberry Pi case + HDD for storage
-
-### Setup
-
 #### Linux
 
 ```zsh
@@ -35,6 +23,18 @@ $ source venv/bin/activate
 $ pip3 install -r requirements.txt
 $ python3 run.py
 ```
+
+### Todo list
+
+-   [x] Crawl cars on autovit
+-   [x] Categorize cars into custom format for scalability
+-   [ ] Normalize, scale, splint data into bins
+-   [ ] Machine Leaning price prediction / stats / charts
+-   [ ] Flask API
+-   [ ] Frontend
+-   [ ] Raspberry Pi case + HDD for storage
+
+### Setup and run
 
 ### Future milestones
 

@@ -2,7 +2,7 @@
 
 ## About this project
 
-`Artificial Intelligence` powered cars `crawler`, tracks the cars market prices, make assumptions about cars, show statistics.
+`Artificial Intelligence` powered cars `crawler`, tracks the cars market prices, makes assumptions about cars, shows statistics.
 
 #### Linux
 

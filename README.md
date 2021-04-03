@@ -1,4 +1,4 @@
-# MOTORS.AI 🧠🚙
+# 🚙 MOTORS.AI 🧠
 
 ## About this project
 
@@ -20,20 +20,20 @@
 
 ```zsh
 $ sudo apt install python3
-$: pip3 install virtualenv
-$: source venv/bin/activate
-$: pip3 install -r requirements.txt
-$: python3 run.py
+$ pip3 install virtualenv
+$ source venv/bin/activate
+$ pip3 install -r requirements.txt
+$ python3 run.py
 ```
 
 #### OSX
 
 ```zsh
-$: brew install python3
-$: pip3 install virtualenv
-$: source venv/bin/activate
-$: pip3 install -r requirements.txt
-$: python3 run.py
+$ brew install python3
+$ pip3 install virtualenv
+$ source venv/bin/activate
+$ pip3 install -r requirements.txt
+$ python3 run.py
 ```
 
 ### Future milestones

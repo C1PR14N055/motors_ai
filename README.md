@@ -1,6 +1,6 @@
-# 🚙 MOTORS.AI 🧠
+# MOTORS.AI 🏎️ 🏍️ 🧠
 
-`Artificial Intelligence` powered cars `crawler`:
+`Artificial Intelligence` powered car ads `crawler`:
 
 -   Tracks cars market prices
 -   Makes assumptions about cars & shows statistics

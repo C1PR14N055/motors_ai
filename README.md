@@ -18,7 +18,7 @@
 
 #### Linux
 
-```console
+```zsh
 $: sudo apt install python3
 $: pip3 install virtualenv
 $: source venv/bin/activate
@@ -28,7 +28,7 @@ $: python3 run.py
 
 #### OSX
 
-```console
+```zsh
 $: brew install python3
 $: pip3 install virtualenv
 $: source venv/bin/activate

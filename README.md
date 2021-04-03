@@ -1,8 +1,8 @@
 # 🚙 MOTORS.AI 🧠
 
-## About this project
-
 `Artificial Intelligence` powered cars `crawler`, tracks the cars market prices, makes assumptions about cars, shows statistics.
+
+### Setup and run
 
 #### Linux
 
@@ -33,8 +33,6 @@ $ python3 run.py
 -   [ ] Flask API
 -   [ ] Frontend
 -   [ ] Raspberry Pi case + HDD for storage
-
-### Setup and run
 
 ### Future milestones
 

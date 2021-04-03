@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
+from .adverts import BaseAdvert, AutoAdvert
+from .scra import Scrapy
 
-import classes.bridge as bridge
-import classes.network as network
-import classes.utils as utils
-import classes.picklify as picklify
+import os
+import sys
 
-import const
+sys.path.append(os.path.dirname(os.path.realpath(__file__)))

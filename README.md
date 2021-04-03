@@ -1,4 +1,4 @@
-# 🚙 MOTORS.AI 🧠
+# 🏎️ motors_ai 🧠
 
 `Artificial Intelligence` powered cars `crawler`:
 

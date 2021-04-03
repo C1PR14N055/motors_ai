@@ -1,15 +1,7 @@
-#!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 import json
 import sys
 import time
-
-import classes.bridge as bridge
-import classes.network as network
-import classes.utils as utils
-import classes.picklify as picklify
-
-import const
 
 
 class Scrapy:
@@ -54,6 +46,3 @@ class Scrapy:
         except Exception as e:
             utils.speak('I\'m sorry but I failed!')
             raise(e)
-
-
-Scrapy().run()

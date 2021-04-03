@@ -13,7 +13,7 @@
 ## Future milestones
 
 0. MVP (Version 1.0):
-    - cars crawler, cars with price indicator (bad, average, cheap, "castana")
+    - cars crawler, cars with price indicator (bad, average, cheap, "castana" 🌰)
 
 1. Version 2.0:
     - crawl and keep data, in 5 years verify cars app by internet history (+ VIN?)

@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from .adverts import BaseAdvert, AutoAdvert
 from .scra import Scrapy
 
 import os

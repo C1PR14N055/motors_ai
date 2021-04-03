@@ -1,4 +1,4 @@
-import config as CFG
+from core import Config
 
 from difflib import SequenceMatcher
 import os
@@ -11,15 +11,15 @@ import pprint
 
 
 class Tools():
-    def log(log, verbose=CFG.LOG_LEVEL_LOW):
-        if (verbose == CFG.LOG_LEVEL_NONE):
+    def log(log, verbose=Config.LOG_LEVEL_LOW):
+        if (verbose == Config.LOG_LEVEL_NONE):
             pass
-        elif (verbose == CFG.LOG_LEVEL_LOW):
+        elif (verbose == Config.LOG_LEVEL_LOW):
             if (type(log) is dict):
                 pprint.pformat(log)
             else:
                 print(log)
-        elif (verbose == CFG.LOG_LEVEL_LOW or CFG.LOG_LEVEL_HIGH):
+        elif (verbose == Config.LOG_LEVEL_LOW or Config.LOG_LEVEL_HIGH):
             if (type(log) is dict):
                 pprint.pformat(log)
             else:

@@ -1,13 +1,13 @@
 import json
 
-import config as CFG
+from core import Config
+from ..utils import Tools
 from .models import AutoAdvert
 from .http import FakeBrowser
-from ..utils import Tools
 
 
 class Transformer:
-    def to_base(data):
+    def to_base(self, data):
         advert = AutoAdvert()
         advert.ParentID = 6
         advert.AVID = data['id']  # autovit id reference
@@ -81,7 +81,7 @@ class Transformer:
         except Exception:
             return advert, False
 
-        Tools.log(advert, CFG.LOG_LEVEL_LOW)
+        Tools.log(advert, Config.LOG_LEVEL_LOW)
         return advert, True
 
     def to_moto(self, data):
@@ -89,7 +89,7 @@ class Transformer:
         advert.ParentCategoryID = 10
         return advert
 
-    def _get_data_param(name, data):
+    def _get_data_param(self, name, data):
         for p in data['params']:
             if p[0] == name:
                 return p[1]
@@ -148,7 +148,7 @@ class Transformer:
         bmbid = mbid if mbid > vbid else vbid
 
         if bmbid < 0.7:  # default to 'Altele' from this brand
-            with open('data/models.json', 'r') as f:
+            with open('./modules/scrapy/data/models.json', 'r') as f:
                 models = json.load(f)
             for m in models:
                 if m['Parent'] == brand['ID'] and m['Title'] == 'Altele':
@@ -241,7 +241,7 @@ class Transformer:
         else:
             return None
 
-    def _guess_negotiable(data):
+    def _guess_negotiable(self, data):
         return 'Negociabil' in data['list_label_small']
 
     def _guess_options(self, data):
@@ -253,11 +253,11 @@ class Transformer:
                     options.append(option['ID'])
         return options
 
-    def _guess(param, searchTerm, parent=False):
+    def _guess(self, param, searchTerm, parent=False):
         if param is None or searchTerm is None:
             return None, -1
 
-        with open('data/{0}.json'.format(param), 'r') as f:
+        with open('./modules/scrapy/data/{0}.json'.format(param), 'r') as f:
             params = json.load(f)
         bid = 0
         found = None
@@ -284,8 +284,8 @@ class Transformer:
         )
         return (found, bid)
 
-    def _get_api_param(param, id):
-        with open(('data/{0}.json'.format(param)), 'r') as f:
+    def _get_api_param(self, param, id):
+        with open(('./modules/scrapy/data/{0}.json'.format(param)), 'r') as f:
             data = json.load(f)
 
         for d in data:

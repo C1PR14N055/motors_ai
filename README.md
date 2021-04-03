@@ -36,7 +36,7 @@ $ python3 run.py
 -   [ ] Machine Leaning price prediction / stats / charts
 -   [ ] Flask API
 -   [ ] Frontend
--   [ ] Raspberry Pi case + HDD for storage
+-   [ ] Mini-server w/ Raspberry Pi + 3D Case + ext. HDD
 
 ### Future milestones
 

@@ -35,7 +35,7 @@ $ python3 run.py
 
 -   [x] Crawl cars on autovit
 -   [x] Categorize cars into custom format for scalability
--   [ ] Normalize, scale, splint data into bins
+-   [ ] Normalize, scale, split data into bins
 -   [ ] Machine Leaning price prediction / stats / charts
 -   [ ] Flask API
 -   [ ] Frontend
@@ -43,9 +43,10 @@ $ python3 run.py
 
 ### Future milestones
 
-#### - Version MVP:
+#### - Version 1.0 (MVP):
 
-    - cars crawler, cars with price indicator (bad, average, cheap, "castana" 🌰)
+    - cars crawler
+    - stats, price indicator (bad, average, cheap, "castana" 🌰)
 
 #### - Version 2.0:
 

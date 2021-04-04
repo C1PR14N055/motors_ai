@@ -67,7 +67,7 @@ class Transformer:
         # numeric values
         advert.CubicCapacity = self._guess_number(
             'Capacitate cilindrica', data)
-        advert.KmNumber = self._guess_number('Km', data)
+        advert.KmNumber = self._guess_number('Kilometraj', data)
         advert.HorsePower = self._guess_number('Putere', data)
         advert.DoorsNumber = self._guess_number('Numar de portiere', data)
         advert.FabricationYear = self._guess_number('Anul fabricatiei', data)

@@ -14,11 +14,13 @@ SCRAPY = not True
 JARVIS = True
 
 if SCRAPY:
-    scrapy = Scrapy(1)
+    scrapy = Scrapy(10)
     scrapy.run()
 if JARVIS:
     jarvis = Jarvis()
     # jarvis.plot_most_expensive()
-    jarvis.ml()
+    # jarvis.plot_years()
+    # jarvis.plot_hp()
+    jarvis.stats()
     # Tools.log('asdfsaf', Tools.LOG_LEVEL_SPEAK)
     # Tools.speak(' hope u slept well')

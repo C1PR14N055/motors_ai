@@ -17,6 +17,7 @@ class Jarvis():
         self.dataframe.columns = self.dataframe.columns.str.strip()
         # show dataframe head all columns
         pd.set_option('max_columns', None)
+        Tools.log('** Available dataframes **')
         Tools.log(self.dataframe.head())
 
     def plot_most_expensive(self):
@@ -41,20 +42,90 @@ class Jarvis():
 
         plt.show(block=True)
 
-    def ml(self):
+    def stats(self):
         import statsmodels.api as sm
         from sklearn.preprocessing import StandardScaler
         scale = StandardScaler()
 
-        X = self.dataframe[['BrandID', 'FabricationYear', 'BrandModelID']]
+        X = self.dataframe.loc[:,
+                               (
+                                   'BrandID',
+                                   'BrandModelID',
+                                   'FabricationYear',
+                                   'CityID',
+                                   'PollutionNormID',
+                                   'CountryID',
+                                   'Status',
+                                   'Matriculated',
+                                   'ServiceBook',
+                                   'ParticleFilter',
+                                   'MetallicColor',
+                                   'FirstOwner',
+                                   'NoAccidents',
+                                   'Tuning',
+                                   'Negotiable',
+                                   'CubicCapacity',
+                                   'KmNumber',
+                                   'HorsePower',
+                                   'DoorsNumber',
+                               )
+                               ]
         y = self.dataframe['Price']
 
+        # self.dataframe = self.dataframe[~np.isnan(self.dataframe)]
+        # self.dataframe = self.dataframe.dropna()
+        # X = X[~np.isinf(X)]
+
         X.loc[:,
-              ['BrandID', 'FabricationYear', 'BrandModelID']
+              (
+                  'BrandID',
+                  'BrandModelID',
+                  'FabricationYear',
+                  'CityID',
+                  'PollutionNormID',
+                  'CountryID',
+                  'Status',
+                  'Matriculated',
+                  'ServiceBook',
+                  'ParticleFilter',
+                  'MetallicColor',
+                  'FirstOwner',
+                  'NoAccidents',
+                  'Tuning',
+                  'Negotiable',
+                  'CubicCapacity',
+                  'KmNumber',
+                  'HorsePower',
+                  'DoorsNumber',
+              )
               ] = scale.fit_transform(
-            X[['BrandID', 'FabricationYear', 'BrandModelID']].values
+            X[[
+                'BrandID',
+                'BrandModelID',
+                'FabricationYear',
+                'CityID',
+                'PollutionNormID',
+                'CountryID',
+                'Status',
+                'Matriculated',
+                'ServiceBook',
+                'ParticleFilter',
+                'MetallicColor',
+                'FirstOwner',
+                'NoAccidents',
+                'Tuning',
+                'Negotiable',
+                'CubicCapacity',
+                'KmNumber',
+                'HorsePower',
+                'DoorsNumber',
+            ]].values
         )
 
-        print(X)
-        est = sm.OLS(y, X).fit()
+        null_nr = X.isnull().sum()
+        Tools.log('** Null data count: {} **'.format(null_nr))
+        Tools.log('X: {}'.format(X))
+        est = sm.OLS(y, X, missing='drop').fit()
+        Tools.log('Est: {}'.format(est))
         est.summary()
+        Tools.log('Est. summary: {}'.format(est.summary()))

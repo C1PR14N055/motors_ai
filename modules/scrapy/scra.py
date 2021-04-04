@@ -6,7 +6,6 @@ from .http import FakeBrowser
 from .convertors import Transformer
 
 import json
-import sys
 import time
 
 # TODO: refactor to not use ids.pkl

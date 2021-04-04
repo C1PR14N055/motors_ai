@@ -11,7 +11,7 @@ class FakeBrowser():
         Tools.log(
             '-- Geting adverts from page %d'
             % page,
-            Config.LOG_LEVEL_HIGH
+            Tools.LOG_LEVEL_HIGH
         )
 
         req = requests.get(
@@ -19,7 +19,7 @@ class FakeBrowser():
         return req.json()['ads']
 
     def steal_images(img_urls):
-        Tools.log('-- Downloading images', Config.LOG_LEVEL_HIGH)
+        Tools.log('-- Downloading images', Tools.LOG_LEVEL_HIGH)
         imgs = []
         for i in img_urls:
             try:
@@ -30,7 +30,7 @@ class FakeBrowser():
                 imgs.append(img)
             except Exception:
                 Tools.log('++ Failed to download %s' %
-                          i, Config.LOG_LEVEL_HIGH)
+                          i, Tools.LOG_LEVEL_HIGH)
                 continue
         return imgs
 

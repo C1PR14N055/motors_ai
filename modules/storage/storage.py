@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import pickle
-from core import Config
 from ..utils import Tools
 
 
@@ -18,10 +17,10 @@ class Singleton(type):
 class Shelf(metaclass=Singleton):
     def __init__(self):
         self._load_data()
-        Tools.log('** Loading data... **', Config.LOG_LEVEL_HIGH)
+        Tools.log('** Loading data... **', Tools.LOG_LEVEL_HIGH)
         Tools.log(
             '** Total known adverts: %d **' %
-            self.total_known_adverts, Config.LOG_LEVEL_HIGH
+            self.total_known_adverts, Tools.LOG_LEVEL_HIGH
         )
 
     def _load_data(self):

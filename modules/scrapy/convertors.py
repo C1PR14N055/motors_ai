@@ -81,7 +81,7 @@ class Transformer:
         except Exception:
             return advert, False
 
-        Tools.log(advert, Config.LOG_LEVEL_LOW)
+        Tools.log(advert)
         return advert, True
 
     def to_moto(self, data):

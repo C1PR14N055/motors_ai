@@ -1,10 +1,4 @@
 class Config:
-    ''' LOG LEVELS '''
-    LOG_LEVEL_NONE = 0
-    LOG_LEVEL_LOW = 1
-    LOG_LEVEL_HIGH = 2
-    LOG_LEVEL_SPEAK = 3
-
     ''' TIMEOUTS '''
     DEFAULT_REQ_TIMEOUT = 5
     IMG_GET_TIMEOUT = 5

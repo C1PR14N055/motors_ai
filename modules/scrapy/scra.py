@@ -44,17 +44,17 @@ class Scrapy:
                     else:
                         Tools.log(
                             '++ Skipping %s - %s, not unique'
-                            % (ad['title'], ad['id']), Config.LOG_LEVEL_HIGH
+                            % (ad['title'], ad['id']), Tools.LOG_LEVEL_HIGH
                         )
-            Tools.log('*' * 80, Config.LOG_LEVEL_HIGH)
+            Tools.log('*' * 80, Tools.LOG_LEVEL_HIGH)
             res = 'Scraped %d new adverts in %d seconds' \
                 % (
                     (len(self.shelf.known_ids) - total_previously_adverts),
                     (time.time() - time_start)
                 )
-            Tools.log('-- %s --' % res, Config.LOG_LEVEL_HIGH)
+            Tools.log('-- %s --' % res, Tools.LOG_LEVEL_HIGH)
             Tools.speak(res)
-            Tools.log('*' * 80, Config.LOG_LEVEL_HIGH)
+            Tools.log('*' * 80, Tools.LOG_LEVEL_HIGH)
         except Exception as e:
             Tools.speak('I\'m sorry but I failed!')
             raise(e)

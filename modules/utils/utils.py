@@ -11,19 +11,34 @@ import pprint
 
 
 class Tools():
-    def log(log, verbose=Config.LOG_LEVEL_LOW):
-        if (verbose == Config.LOG_LEVEL_NONE):
+    ''' LOG LEVELS '''
+    LOG_LEVEL_NONE = 0
+    LOG_LEVEL_LOW = 1
+    LOG_LEVEL_HIGH = 2
+    LOG_LEVEL_SPEAK = 3
+
+    @staticmethod
+    def log(log, verbose=LOG_LEVEL_LOW):
+        '''
+        Logs on 4 levels, default low, see above
+
+        Parameters:
+            log (str): Is used to pass the log
+            varbose (int, default=LOG_LEVEL_LOW)
+        '''
+        # no print
+        if verbose == Tools.LOG_LEVEL_NONE:
             pass
-        elif (verbose == Config.LOG_LEVEL_LOW):
-            if (type(log) is dict):
-                pprint.pformat(log)
-            else:
-                print(log)
-        elif (verbose == Config.LOG_LEVEL_LOW or Config.LOG_LEVEL_HIGH):
-            if (type(log) is dict):
-                pprint.pformat(log)
-            else:
-                print(log)
+        # on low, print if low
+        elif verbose == Tools.LOG_LEVEL_LOW:
+            Tools.pretty_print(log)
+        # on high, show high and low
+        elif verbose == Tools.LOG_LEVEL_HIGH:
+            Tools.pretty_print(log)
+        # on speak, speak and show both high and low
+        elif verbose == Tools.LOG_LEVEL_SPEAK:
+            Tools.pretty_print(log)
+            Tools.speak(log)
 
     def random_str(length=8):
         return ''.join(
@@ -43,6 +58,7 @@ class Tools():
         return SequenceMatcher(None, a, b).ratio()
 
     def speak(what):
+        Tools.log(what, Tools.LOG_LEVEL_HIGH)
         if sys.platform.startswith('linux'):
             import subprocess
             subprocess.call(['speech-dispatcher'])
@@ -52,3 +68,9 @@ class Tools():
 
     def timestamp():
         return int(time.time())
+
+    def pretty_print(log):
+        if type(log) == dict:
+            pprint.pformat(log)
+        else:
+            print(log)

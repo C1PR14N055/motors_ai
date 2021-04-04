@@ -9,6 +9,9 @@ import json
 import sys
 import time
 
+# TODO: refactor to not use ids.pkl
+# TODO: refactor to save crawl with time info
+
 
 class Scrapy:
     shelf = Shelf()

@@ -13,35 +13,31 @@ class Jarvis():
         self.shelf = Shelf()
         self.adverts_ok, self.adverts_err = self.shelf.unpickle_adverts()
         self.dataframe = pd.DataFrame([x.__dict__ for x in self.adverts_ok])
-
-    def show_plots(self):
-        # pd.set_option('max_columns', None)
+        # safety trim
+        self.dataframe.columns = self.dataframe.columns.str.strip()
+        # show dataframe head all columns
+        pd.set_option('max_columns', None)
         Tools.log(self.dataframe.head())
 
-        brands_bins = np.arange(1, 100, 1)
-        print(brands_bins)
-        brands = self.dataframe.groupby(
-            pd.cut(self.dataframe['BrandID'], brands_bins)
-        ).mean()
-        # brands[['BrandID', 'Price']].plot.bar(x='BrandID', y="Price")
-        mb = stats.mode(brands)
-        plt.bar(brands, height='Anunturi')
-        plt.show()
-        print(mb.count)
+    def plot_most_expensive(self):
+        # most expensive brands bar chart
+        self.dataframe.sort_values('Price').plot.bar('BrandID', 'Price')
 
+    def plot_years(self):
         # years plot
         ys_bins = np.arange(2000, 2021, 1)
         ys = self.dataframe.groupby(
             pd.cut(self.dataframe['FabricationYear'], ys_bins)
         ).median()
-        # ys.plot(x='FabricationYear', y='Price')
+        ys.plot(x='FabricationYear', y='Price')
 
+    def plot_hp(self):
         # horse power plot
         hp_bins = np.arange(50, 270, 25)
         hp = self.dataframe.groupby(
             pd.cut(self.dataframe['HorsePower'], hp_bins)
         ).mean()
-        # hp[['HorsePower', 'Price']].plot.bar(x='HorsePower', y='Price')
+        hp[['HorsePower', 'Price']].plot.bar(x='HorsePower', y='Price')
 
         plt.show(block=True)
 
@@ -53,9 +49,9 @@ class Jarvis():
         X = self.dataframe[['BrandID', 'FabricationYear', 'BrandModelID']]
         y = self.dataframe['Price']
 
-        X[
-            ['BrandID', 'FabricationYear', 'BrandModelID']
-        ] = scale.fit_transform(
+        X.loc[:,
+              ['BrandID', 'FabricationYear', 'BrandModelID']
+              ] = scale.fit_transform(
             X[['BrandID', 'FabricationYear', 'BrandModelID']].values
         )
 

@@ -10,7 +10,7 @@ if sys.version_info[0] < 3:
 
 # TODO: args parse
 
-SCRAPY = True
+SCRAPY = not True
 JARVIS = True
 
 if SCRAPY:
@@ -18,7 +18,7 @@ if SCRAPY:
     scrapy.run()
 if JARVIS:
     jarvis = Jarvis()
-    jarvis.show_plots()
-    # jarvis.test()
+    # jarvis.plot_most_expensive()
+    jarvis.ml()
     # Tools.log('asdfsaf', Tools.LOG_LEVEL_SPEAK)
     # Tools.speak(' hope u slept well')

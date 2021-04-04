@@ -10,11 +10,11 @@ if sys.version_info[0] < 3:
 
 # TODO: args parse
 
-SCRAPY = not True
+SCRAPY = True
 JARVIS = True
 
 if SCRAPY:
-    scrapy = Scrapy(10)
+    scrapy = Scrapy(500)
     scrapy.run()
 if JARVIS:
     jarvis = Jarvis()

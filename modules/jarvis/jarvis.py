@@ -5,7 +5,6 @@ from ..storage import Shelf
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy import stats
 
 
 class Jarvis():
@@ -47,6 +46,7 @@ class Jarvis():
         from sklearn.preprocessing import StandardScaler
         scale = StandardScaler()
 
+        # usable dataframe values
         X = self.dataframe.loc[:,
                                (
                                    'BrandID',
@@ -70,12 +70,16 @@ class Jarvis():
                                    'DoorsNumber',
                                )
                                ]
+
+        # to be predicted dataframe values
         y = self.dataframe['Price']
 
-        # self.dataframe = self.dataframe[~np.isnan(self.dataframe)]
-        # self.dataframe = self.dataframe.dropna()
-        # X = X[~np.isinf(X)]
-
+        '''
+        The fit_transform method calculates the mean and
+        variance of each of the features
+        present in our data transforming all the
+        features using the respective mean and variance
+        '''
         X.loc[:,
               (
                   'BrandID',
@@ -125,7 +129,7 @@ class Jarvis():
         null_nr = X.isnull().sum()
         Tools.log('** Null data count: {} **'.format(null_nr))
         Tools.log('X: {}'.format(X))
-        est = sm.OLS(y, X, missing='drop').fit()
-        Tools.log('Est: {}'.format(est))
-        est.summary()
-        Tools.log('Est. summary: {}'.format(est.summary()))
+        estimate = sm.OLS(y, X, missing='drop').fit()
+        Tools.log('Est: {}'.format(estimate))
+        summary = estimate.summary()
+        Tools.log('Est. summary: {}'.format(summary))

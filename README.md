@@ -35,8 +35,8 @@ $ python3 run.py
 
 -   [x] Crawl cars on autovit
 -   [x] Categorize cars into custom format for scalability
--   [ ] Split data into bins, normalize, scale
--   [ ] Visualize data, create plots
+-   [x] Split data into bins, normalize, scale
+-   [x] Visualize data, create plots
 -   [ ] Machine-Leaning price prediction / stats / charts
 -   [ ] Multi-Threading, scrape continuously (within req. limits) while training continuously
 -   [ ] Flask Backend API

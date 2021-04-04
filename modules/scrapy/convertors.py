@@ -154,14 +154,16 @@ class Transformer:
                 if m['Parent'] == brand['ID'] and m['Title'] == 'Altele':
                     brandModel = m
                     break
-
-        Tools.log('%d%% sure %s %s %s = %s, %s' % (
-            bmbid * 100,
-            brandName,
-            modelName,
-            versionName or '-',
-            brand['Title'],
-            brandModel['Title'])
+        Tools.log(
+            '%d%% sure %s %s %s = %s, %s'
+            % (
+                bmbid * 100,
+                brandName,
+                modelName,
+                versionName or '-',
+                brand['Title'],
+                brandModel['Title']
+            )
         )
         return (brand['ID'], brandModel['ID'])
 
@@ -231,7 +233,6 @@ class Transformer:
                 and self._get_data_param(booleanName, data) else False
             )
         )
-
         return True if self._get_data_param(booleanName, data) is not None \
             and self._get_data_param(booleanName, data) else False
 
@@ -256,7 +257,6 @@ class Transformer:
     def _guess(self, param, searchTerm, parent=False):
         if param is None or searchTerm is None:
             return None, -1
-
         with open('./modules/scrapy/data/{0}.json'.format(param), 'r') as f:
             params = json.load(f)
         bid = 0
@@ -278,16 +278,16 @@ class Transformer:
                     found = p
                     bid = Tools.similar(p['Title'], searchTerm)
 
-        Tools.log(
-            '%d%% sure \'%s\' === \'%s\''
-            % (bid * 100, searchTerm, found['Title'])
-        )
+        if found:
+            Tools.log(
+                '%d%% sure \'%s\' === \'%s\''
+                % (bid * 100, searchTerm, found['Title'])
+            )
         return (found, bid)
 
     def _get_api_param(self, param, id):
         with open(('./modules/scrapy/data/{0}.json'.format(param)), 'r') as f:
             data = json.load(f)
-
         for d in data:
             if (d['ID'] == id):
                 return d

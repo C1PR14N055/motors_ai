@@ -25,23 +25,23 @@ class Scrapy:
             f.write(json.dumps(adverts))
 
     def run(self):
-        known_ids = []
-        known_adverts = {}
-
         try:
-            known_ids = self.shelf.unpickle_ids()
-            known_adverts = self.shelf.unpickle_adverts()
-            total_previously_adverts = len(known_ids)
+            total_previously_adverts = len(self.shelf.known_ids)
             time_start = time.time()
             for p in range(1, self.pages_to_scrape + 1):
                 ads = FakeBrowser.steal_adverts(p)
                 self._save_ads_debug(ads)
                 for ad in ads:
-                    if ad['id'] not in known_ids:  # unique ads only
+                    if ad['id'] not in self.shelf.known_ids:  # unique ads only
                         advert, status = self.transformer.to_auto(ad)
-                        known_ids.append(advert.AVID)
-                        self.shelf.pickle_ids(known_ids)
-                        self.shelf.pickle_adverts(known_adverts)
+                        self.shelf.known_ids.append(advert.AVID)
+                        self.shelf.pickle_ids(self.shelf.known_ids)
+
+                        self.shelf.adverts_ok.append(advert)
+                        self.shelf.pickle_adverts(
+                            self.shelf.adverts_ok,
+                            self.shelf.adverts_err
+                        )
                     else:
                         Tools.log(
                             '++ Skipping %s - %s, not unique'
@@ -50,7 +50,7 @@ class Scrapy:
             Tools.log('*' * 80, Config.LOG_LEVEL_HIGH)
             res = 'Scraped %d new adverts in %d seconds' \
                 % (
-                    (len(known_ids) - total_previously_adverts),
+                    (len(self.shelf.known_ids) - total_previously_adverts),
                     (time.time() - time_start)
                 )
             Tools.log('-- %s --' % res, Config.LOG_LEVEL_HIGH)

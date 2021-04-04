@@ -60,4 +60,4 @@ $ python3 run.py
 
 #### - Version 4.0:
 
-    - verified by apo authorized mechanic (like uber drivers, with stars rating)
+    - verified by app authorized mechanic (like uber drivers, with star ratings)

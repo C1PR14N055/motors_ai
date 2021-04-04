@@ -15,9 +15,6 @@ class Scrapy:
     transformer = Transformer()
 
     def __init__(self, pages_to_scrape=1):
-        if sys.version_info[0] < 3:
-            raise Exception('Must be ran using python 3!')
-
         self.pages_to_scrape = pages_to_scrape
 
     def _save_ads_debug(self, adverts):
@@ -36,8 +33,10 @@ class Scrapy:
                         advert, status = self.transformer.to_auto(ad)
                         self.shelf.known_ids.append(advert.AVID)
                         self.shelf.pickle_ids(self.shelf.known_ids)
-
-                        self.shelf.adverts_ok.append(advert)
+                        if status:
+                            self.shelf.adverts_ok.append(advert)
+                        else:
+                            self.shelf.adverts_err.append(advert)
                         self.shelf.pickle_adverts(
                             self.shelf.adverts_ok,
                             self.shelf.adverts_err

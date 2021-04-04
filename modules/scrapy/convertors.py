@@ -77,7 +77,7 @@ class Transformer:
         advert.CarOptions = self._guess_options(data)
         # ajax phone nr
         try:
-            advert.Phone = FakeBrowser.get_av_phone(data)
+            advert.Phone = FakeBrowser.steal_phone_nr(data)
         except Exception:
             return advert, False
 

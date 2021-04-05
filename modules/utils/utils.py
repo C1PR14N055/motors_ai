@@ -68,7 +68,7 @@ class Tools():
         return int(time.time())
 
     def pretty_print(log):
-        print("*" * 42)
+        print('*' * 42)
         if type(log) == dict:
             pprint.pformat(log)
         else:

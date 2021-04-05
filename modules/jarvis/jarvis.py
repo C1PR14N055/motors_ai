@@ -6,6 +6,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sea
+import statsmodels.api as sm
+from sklearn.preprocessing import StandardScaler
 
 
 class Jarvis():
@@ -13,6 +15,8 @@ class Jarvis():
         self.shelf = Shelf()
         self.adverts_ok, self.adverts_err = self.shelf.unpickle_adverts()
         self.dataframe = pd.DataFrame([x.__dict__ for x in self.adverts_ok])
+        self.scale = None
+        self.model = None
         sea.set()
 
         # safety trim
@@ -23,7 +27,7 @@ class Jarvis():
         Tools.log(self.dataframe.head())
 
     def plot_years(self):
-        # years plot
+        # vs price scale
         ys_bins = np.arange(2000, 2022, 2)
         ys = self.dataframe.groupby(
             pd.cut(self.dataframe['FabricationYear'], ys_bins)
@@ -32,7 +36,7 @@ class Jarvis():
         plt.show(block=True)
 
     def plot_hp(self):
-        # horse power plot
+        # vs price
         hp_bins = np.arange(50, 250, 30)
         hp = self.dataframe.groupby(
             pd.cut(self.dataframe['HorsePower'], hp_bins)
@@ -42,12 +46,11 @@ class Jarvis():
         )
         plt.show(block=True)
 
-    def stats(self):
-        import statsmodels.api as sm
-        from sklearn.preprocessing import StandardScaler
-        scale = StandardScaler()
+    # TODO: save model and scale
+    def build_model(self):
+        self.scale = StandardScaler()
 
-        # features
+        # important features selection
         X = self.dataframe.loc[:,
                                (
                                    'BrandID',
@@ -103,7 +106,7 @@ class Jarvis():
                   'HorsePower',
                   'DoorsNumber',
               )
-              ] = scale.fit_transform(
+              ] = self.scale.fit_transform(
             X[[
                 'BrandID',
                 'BrandModelID',
@@ -127,6 +130,9 @@ class Jarvis():
             ]].values
         )
 
+        # Scaled data
+        Tools.log('** Scaled data **\n{}'.format(X))
+
         '''
         Single Price prediction with Ordinary List Squares
         Data is normaziled (0, 1) (True) (False)
@@ -139,11 +145,17 @@ class Jarvis():
         Example:
         statsmodel.OLS(predict, featuresVars).fit() // fits data to OLS model
         '''
-        Tools.log('** Null obj count: {} **'.format(X.isnull().sum()))
+        # log missing feature count
+        Tools.log('** Null feature count **\n{} '.format(X.isnull().sum()))
 
         # fit model
-        model = sm.OLS(y, X, missing='drop').fit()
-        Tools.log('*** Model: ***\n{}'.format(model))
-        # get summary
-        summary = model.summary()
-        Tools.log('*** Model Sumary: ***\n{}'.format(summary))
+        self.model = sm.OLS(y, X, missing='drop').fit()
+        # log model summary
+        Tools.log('*** Model Sumary: ***\n{}'.format(
+            self.model.summary()
+        ))
+
+    def predict(self, car):
+        scaled = self.scale.transform([car])
+        predicted = self.model.predict(scaled[0])
+        return predicted

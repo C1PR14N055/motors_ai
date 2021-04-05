@@ -10,8 +10,8 @@ if sys.version_info[0] < 3:
 
 # TODO: args parse
 
-EXEC_SCRAPY = not True
-PAGES_TO_SCRAPE = 1
+EXEC_SCRAPY = True
+PAGES_TO_SCRAPE = 5
 EXEC_JARVIS = True
 TEST_CAR = [
     14,     # brand id, bmw
@@ -40,11 +40,10 @@ if EXEC_SCRAPY:
     scrapy.run()
 if EXEC_JARVIS:
     jarvis = Jarvis()
+    jarvis.plot_years()
+    jarvis.plot_hp()
     jarvis.build_model()
     predicted = jarvis.predict(TEST_CAR)
     Tools.log('** Predicted price for **')
     Tools.log(TEST_CAR)
     Tools.log('** ==> {} EUR <== **'.format(predicted))
-    # jarvis.plot_years()
-    # jarvis.plot_hp()
-    # jarvis.build_model()

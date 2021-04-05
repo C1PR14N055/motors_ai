@@ -39,7 +39,7 @@ $ python3 run.py
 -   [x] Categorize cars into custom format for scalability
 -   [x] Split data into bins, normalize, scale
 -   [x] Visualize data, create plots
--   [ ] Machine-Leaning price prediction / stats / charts
+-   [x] Machine-Leaning price prediction / stats / charts
 -   [ ] Multi-Threading, scrape continuously (within req. limits) while training continuously
 -   [ ] Flask Backend API
 -   [ ] Frontend static with jQuery or vanilla.js

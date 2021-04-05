@@ -40,6 +40,7 @@ $ python3 run.py
 -   [x] Split data into bins, normalize, scale
 -   [x] Visualize data, create plots
 -   [x] Machine-Leaning price prediction / stats / charts
+-   [ ] Estimate time to sell
 -   [ ] Multi-Threading, scrape continuously (within req. limits) while training continuously
 -   [ ] Flask Backend API
 -   [ ] Frontend static with jQuery or vanilla.js

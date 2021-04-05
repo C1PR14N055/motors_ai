@@ -12,6 +12,7 @@
 #### Linux
 
 ```zsh
+$ git clone git@github.com:C1PR14N055/motors_ai.git
 $ sudo apt install python3
 $ pip3 install virtualenv
 $ mkdir venv && python3 -m venv ./venv
@@ -23,6 +24,7 @@ $ python3 run.py
 #### OSX
 
 ```zsh
+$ git clone git@github.com:C1PR14N055/motors_ai.git
 $ brew install python3
 $ pip3 install virtualenv
 $ mkdir venv && virtualenv -p python3 ./venv
@@ -43,6 +45,7 @@ $ python3 run.py
 -   [ ] Frontend static with jQuery or vanilla.js
 -   [ ] Dockerize
 -   [ ] Mini-server w/ Raspberry Pi + 3D Case + ext. HDD
+-   [ ] Multi-variance to also predit how fast it will sell
 
 ### Future milestones
 
@@ -53,7 +56,9 @@ $ python3 run.py
 
 #### - Version 2.0:
 
-    - crawl and keep data, in 5 years verify cars app by internet history (+ VIN?)
+    - sh for easy install and run
+    - smarten up Scrapy and include more websites (search engine?)
+    - crawl and keep data... in 5-10 years verify cars app by internet history (+ VIN?)
 
 #### - Version 3.0:
 

@@ -10,17 +10,15 @@ if sys.version_info[0] < 3:
 
 # TODO: args parse
 
-SCRAPY = True
-JARVIS = True
+EXEC_SCRAPY = not True
+PAGES_TO_SCRAPE = 1
+EXEC_JARVIS = True
 
-if SCRAPY:
-    scrapy = Scrapy(500)
+if EXEC_SCRAPY:
+    scrapy = Scrapy(PAGES_TO_SCRAPE)
     scrapy.run()
-if JARVIS:
+if EXEC_JARVIS:
     jarvis = Jarvis()
-    # jarvis.plot_most_expensive()
-    # jarvis.plot_years()
-    # jarvis.plot_hp()
+    jarvis.plot_years()
+    jarvis.plot_hp()
     jarvis.stats()
-    # Tools.log('asdfsaf', Tools.LOG_LEVEL_SPEAK)
-    # Tools.speak(' hope u slept well')

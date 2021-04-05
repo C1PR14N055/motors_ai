@@ -1,5 +1,3 @@
-from core import Config
-
 from difflib import SequenceMatcher
 import os
 import random

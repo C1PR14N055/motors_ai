@@ -13,11 +13,17 @@ if sys.version_info[0] < 3:
 EXEC_SCRAPY = True
 PAGES_TO_SCRAPE = 5
 EXEC_JARVIS = True
+'''
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+TO TEST A CAR GET BrandID FROM `data/brands.json`
+AND ModelID FROM `data/models.json'
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+'''
 TEST_CAR = [
-    14,     # brand id, bmw
-    177,    # model id, series 3
+    14,     # BrandID, bmw
+    177,    # ModelID, series 3
     2010,   # fab year
-    13,     # CityID,  13 = Arad
+    13,     # CityID, 13 = Arad (categorical data?)
     6,      # PollutionNormID, 6 = Euro 5
     9,      # CountryID, 9 = Germany
     3,      # Status, 3 = used
@@ -32,7 +38,7 @@ TEST_CAR = [
     2000,   # CubicCapacity
     240000,  # KmNumber
     184,    # HorsePoser
-    4       # DoorsNumber
+    4       # DoorsNumber (TODO: merge 2/3 && 4/5)
 ]
 
 if EXEC_SCRAPY:

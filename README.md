@@ -40,7 +40,7 @@ $ python3 run.py
 -   [x] Split data into bins, normalize, scale
 -   [x] Visualize data, create plots
 -   [x] Machine-Leaning price prediction / stats / charts
--   [ ] Estimate time to sell
+-   [ ] Take car options into account
 -   [ ] Multi-Threading, scrape continuously (within req. limits) while training continuously
 -   [ ] Flask Backend API
 -   [ ] Frontend static with jQuery or vanilla.js
@@ -57,6 +57,7 @@ $ python3 run.py
 
 #### - Version 2.0:
 
+    - estimate time to sell
     - sh for easy install and run
     - smarten up Scrapy and include more websites (search engine?)
     - crawl and keep data... in 5-10 years verify cars app by internet history (+ VIN?)
@@ -64,8 +65,9 @@ $ python3 run.py
 #### - Version 3.0:
 
     - pwa cars at good prices app free (with ads)
+    - integrate stripe (2% + 1RON commission, Flask support) / snipcart (free untill $500)?
     - with device / browser ident, and custom install instructions
-    - subscription for instant car news
+    - subscription for instant 'cars at great price' notifications
 
 #### - Version 4.0:
 

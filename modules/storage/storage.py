@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 import pickle
 from ..utils import Tools
+from datetime import datetime, timezone
+import gzip
+import json
+import os
 
 
 class Singleton(type):
@@ -16,45 +20,68 @@ class Singleton(type):
 
 class Shelf(metaclass=Singleton):
     def __init__(self):
+        Tools.log('++ Loading data...', Tools.LOG_LEVEL_HIGH)
         self._load_data()
-        Tools.log('** Loading data... **', Tools.LOG_LEVEL_HIGH)
         Tools.log(
-            '** Total known adverts: %d **' %
+            '** Total known adverts: %d' %
             self.total_known_adverts, Tools.LOG_LEVEL_HIGH
         )
 
     def _load_data(self):
-        self.known_ids = self.unpickle_ids()
-        self.adverts_ok, self.adverts_err = self.unpickle_adverts()
+        self.known_ids = self.deserialize_ids()
+        self.adverts = self.deserialize_adverts()
         self.total_known_adverts = len(self.known_ids)
 
-    def pickle_ids(self, ids):
-        with open('pickle_jar/ids.pkl', 'wb') as f:
-            pickle.dump(ids, f)
-            f.close()
+    def _filename_now(self, filename):
+        return '{}_{}.gz'.format(
+            datetime.now(timezone.utc).strftime('%d-%m-%Y@%H:%M:%S'),
+            filename,
+        )
 
-    def unpickle_ids(self):
+    def save_ads_debug(self, adverts):
         try:
-            with open('pickle_jar/ids.pkl', 'rb') as f:
-                ids = pickle.load(f)
+            os.mkdir('database/autovit/')
+        except FileExistsError:
+            pass
+        with open('database/autovit/last_adverts_debug.json', 'w') as f:
+            f.write(json.dumps(adverts, indent=4))
+        with open('database/autovit/last_advert_debug.json', 'w') as f:
+            f.write(json.dumps(adverts[-1:], indent=4))
+
+    def serialize_ids(self, ids):
+        try:
+            os.mkdir('database/autovit/')
+        except FileExistsError:
+            pass
+        with gzip.open('database/autovit/scraped_ids.gz', 'w') as fout:
+            fout.write(json.dumps(ids).encode('utf-8'))
+
+    def deserialize_ids(self):
+        try:
+            with gzip.open('database/autovit/scraped_ids.gz', 'r') as fin:
+                ids = json.loads(fin.read().decode('utf-8'))
                 return ids
         except FileNotFoundError:
             return []
 
-    def pickle_adverts(self, adverts_ok, adverts_err):
-        with open('pickle_jar/adverts_ok.pkl', 'wb') as f:
-            pickle.dump(adverts_ok, f)
-            f.close()
-        with open('pickle_jar/adverts_err.pkl', 'wb') as f:
-            pickle.dump(adverts_err, f)
-            f.close()
-
-    def unpickle_adverts(self):
+    def serialize_adverts(self, adverts):
         try:
-            with open('pickle_jar/adverts_ok.pkl', 'rb') as f:
-                adverts_ok = pickle.load(f)
-            with open('pickle_jar/adverts_err.pkl', 'rb') as f:
-                adverts_err = pickle.load(f)
-            return adverts_ok, adverts_err
-        except FileNotFoundError:
-            return [], []
+            os.mkdir('database/autovit/adverts/')
+        except FileExistsError:
+            pass
+
+        filename = self._filename_now('{}_adverts'.format(len(adverts)))
+        with gzip.open(os.path.join('database/autovit/adverts', filename).format(), 'w') as fout:
+            fout.write(json.dumps(adverts).encode('utf-8'))
+
+    def deserialize_adverts(self):
+        adverts = []
+        for root, dirs, files in os.walk('database/autovit/adverts/'):
+            for name in files:
+                file = os.path.join(root, name)
+                Tools.log('++ Loading: {}'.format(name))
+                with gzip.open(file, 'r') as fin:
+                    adverts.append(json.loads(fin.read().decode('utf-8')))
+            return adverts
+        else:
+            return []

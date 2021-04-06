@@ -10,11 +10,9 @@ if sys.version_info[0] < 3:
 
 # TODO: args parse
 
-EXEC_SCRAPY = not True
-PAGES_TO_SCRAPE = 1
-EXEC_JARVIS = True
-# TODO: more plots
-JARVIS_SHOW_PLOTS = True
+EXEC_SCRAPY = True
+PAGES_TO_SCRAPE = 100
+EXEC_JARVIS = not True
 '''
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 TO TEST A CAR GET BrandID FROM `data/brands.json`
@@ -48,14 +46,23 @@ if EXEC_SCRAPY:
     scrapy.run()
 if EXEC_JARVIS:
     jarvis = Jarvis()
-    if JARVIS_SHOW_PLOTS:
-        jarvis.plot_price()
-        # jarvis.plot_km()
-        # jarvis.plot_years()
-        # jarvis.plot_hp()
 
     jarvis.build_model()
     prediction = jarvis.predict(TEST_CAR)
-    Tools.log('** Predicted price for **')
-    Tools.log(TEST_CAR)
-    Tools.log('** ==> {} EUR <== **'.format(prediction))
+    Tools.log('** Predicted price for ==> {} EUR'.format(prediction))
+
+# shelf = Shelf()
+# # x = shelf.unpickle_ids()
+# # shelf.serialize_ids(x)
+# # jx = shelf.deserialize_ids()
+# # Tools.log(x[:10])
+# # Tools.log(jx[:10])
+
+
+# adv_ok, adv_err = shelf.unpickle_adverts()
+# Tools.log('adv_ok[:10]')
+# Tools.log(adv_ok[:10])
+# shelf.serialize_adverts(adv_ok, adv_err)
+# jadv = shelf.deserialize_adverts()
+# Tools.log('jadv[:10]')
+# Tools.log(jadv[:1])

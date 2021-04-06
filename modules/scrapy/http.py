@@ -7,9 +7,10 @@ from PIL import Image
 
 
 class FakeBrowser():
+    @staticmethod
     def steal_adverts(page):
         Tools.log(
-            '-- Geting adverts from page %d'
+            '** Geting adverts from page %d'
             % page,
             Tools.LOG_LEVEL_HIGH
         )
@@ -18,8 +19,9 @@ class FakeBrowser():
             url=Config.AV_ADS_URL.format(page, Tools.timestamp()))
         return req.json()['ads']
 
+    @staticmethod
     def steal_images(img_urls):
-        Tools.log('-- Downloading images', Tools.LOG_LEVEL_HIGH)
+        Tools.log('** Downloading images', Tools.LOG_LEVEL_HIGH)
         imgs = []
         for i in img_urls:
             try:
@@ -29,11 +31,12 @@ class FakeBrowser():
                 img = img.crop((0, 0, w, h - 40))
                 imgs.append(img)
             except Exception:
-                Tools.log('++ Failed to download %s' %
+                Tools.log('-- Failed to download %s' %
                           i, Tools.LOG_LEVEL_HIGH)
                 continue
         return imgs
 
+    @staticmethod
     def steal_phone_nr(av_advert):
         req = requests.get(
             url=Config.AV_PHONE_URL.format(av_advert['id'])).json()

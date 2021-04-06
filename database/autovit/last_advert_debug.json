@@ -1,0 +1,175 @@
+[
+    {
+        "id": "7044507690",
+        "region_id": "13",
+        "region_name": "Timis",
+        "city_id": "97487",
+        "city_name": "Timisoara",
+        "district_id": "",
+        "district_name": "",
+        "new_used": "used",
+        "url": "https://www.autovit.ro/anunt/bmw-x5-ID7GK2fM.html",
+        "preview_url": "https://www.autovit.ro/i2/anunt/bmw-x5-ID7GK2fM.html?json=1&isPreview=1",
+        "title": "BMW X5",
+        "title_description_full": "BMW X5",
+        "created": "Ieri 18:24",
+        "age": 0,
+        "description": "",
+        "highlighted": 0,
+        "urgent": 0,
+        "topAd": 0,
+        "category_id": 29,
+        "ad_packages": "",
+        "ad_features": [
+            "add_olx"
+        ],
+        "params": [
+            [
+                "Categorie",
+                "Autoturisme"
+            ],
+            [
+                "Marca",
+                "BMW"
+            ],
+            [
+                "Model",
+                "X5"
+            ],
+            [
+                "Anul fabricatiei",
+                "2011 "
+            ],
+            [
+                "Kilometraj",
+                "263 000 km"
+            ],
+            [
+                "Combustibil",
+                "Diesel"
+            ],
+            [
+                "Caroserie",
+                "SUV"
+            ],
+            [
+                "Culoare",
+                "Maro"
+            ],
+            [
+                "Numar anunt",
+                "7044507690"
+            ],
+            [
+                "Stare",
+                "Second hand"
+            ]
+        ],
+        "subtitle": [],
+        "business": 0,
+        "hide_user_ads_button": 0,
+        "has_dealer_page_feature": false,
+        "status": "active",
+        "dealer_logo_in_results": 0,
+        "dealer_logo_in_ad_page": 0,
+        "dealer_logo": "",
+        "stand_id": "",
+        "map_address": "",
+        "external_partner_code": "",
+        "partner_offer_url": "",
+        "fuel_type": {
+            "key": "diesel",
+            "value": "Diesel"
+        },
+        "is_promoted": false,
+        "dealer_info": {
+            "userType": "Privat",
+            "phones": [
+                "075"
+            ],
+            "userRegistrationDate": "25-09-2017",
+            "isCalltrackingUser": 0
+        },
+        "has_phone": 1,
+        "has_email": 1,
+        "listing_params": [
+            [
+                "Anul fabricatiei",
+                "2011 "
+            ],
+            [
+                "Kilometraj",
+                "263 000 km"
+            ],
+            [
+                "Combustibil",
+                "Diesel"
+            ]
+        ],
+        "map_zoom": "13",
+        "map_lat": "45.75550000",
+        "map_lon": "21.23750000",
+        "map_radius": 0,
+        "map_show_detailed": true,
+        "map_private_radius_size": 2,
+        "show_map_for_private": true,
+        "city_label": "Timisoara",
+        "person": "Ioan",
+        "user_label": "Ioan",
+        "user_ads_id": "7535",
+        "user_id": "7535",
+        "numeric_user_id": "1687707",
+        "user_ads_url": "https://www.autovit.ro/i2/anunturi/user/7535/?json=1&search%5Buser_id%5D=1687707",
+        "list_label": "11 800 EUR",
+        "list_label_ad": "11 800 EUR",
+        "list_label_small": "\n",
+        "photos": [
+            {
+                "3": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InFuMWtnbHFkdXdmZTMtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.xFt4s-gErSvJ_42MN2vSNNH02ZftwjBnz0xBme0qLDY/image;s=1080x720",
+                "0": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InFuMWtnbHFkdXdmZTMtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.xFt4s-gErSvJ_42MN2vSNNH02ZftwjBnz0xBme0qLDY/image;s=732x488",
+                "1": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InFuMWtnbHFkdXdmZTMtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.xFt4s-gErSvJ_42MN2vSNNH02ZftwjBnz0xBme0qLDY/image;s=148x110",
+                "2": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InFuMWtnbHFkdXdmZTMtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.xFt4s-gErSvJ_42MN2vSNNH02ZftwjBnz0xBme0qLDY/image;s=320x240",
+                "4": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InFuMWtnbHFkdXdmZTMtQVVUT1ZJVFJPIn0.qvYDg4kvo-ehE8hTv9cvOA6KYJyHGvKRhNlSrVUIqFs/image;s=1280x800"
+            },
+            {
+                "3": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVybmh0eGVpanA5bi1BVVRPVklUUk8iLCJ3IjpbeyJmbiI6InE3bXo1M2JpZnB6ay1BVVRPVklUUk8iLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.XOMJ39tKJLnJAgkBKXHktEXzEH2iIarvRzI_qu3g_rM/image;s=1080x720",
+                "0": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVybmh0eGVpanA5bi1BVVRPVklUUk8iLCJ3IjpbeyJmbiI6InE3bXo1M2JpZnB6ay1BVVRPVklUUk8iLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.XOMJ39tKJLnJAgkBKXHktEXzEH2iIarvRzI_qu3g_rM/image;s=732x488",
+                "1": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVybmh0eGVpanA5bi1BVVRPVklUUk8iLCJ3IjpbeyJmbiI6InE3bXo1M2JpZnB6ay1BVVRPVklUUk8iLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.XOMJ39tKJLnJAgkBKXHktEXzEH2iIarvRzI_qu3g_rM/image;s=148x110",
+                "2": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVybmh0eGVpanA5bi1BVVRPVklUUk8iLCJ3IjpbeyJmbiI6InE3bXo1M2JpZnB6ay1BVVRPVklUUk8iLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.XOMJ39tKJLnJAgkBKXHktEXzEH2iIarvRzI_qu3g_rM/image;s=320x240",
+                "4": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVybmh0eGVpanA5bi1BVVRPVklUUk8ifQ.TJTkHcAV3A1DfJt1W4ekH966J-7Ug3u9wrykzIordcA/image;s=1280x800"
+            },
+            {
+                "3": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImZ6djgzYjlveTRlbTEtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.3AX0wOlI-7C3VpmzhK6CJCaBiDXilwjISe4HgKLGogI/image;s=1080x720",
+                "0": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImZ6djgzYjlveTRlbTEtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.3AX0wOlI-7C3VpmzhK6CJCaBiDXilwjISe4HgKLGogI/image;s=732x488",
+                "1": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImZ6djgzYjlveTRlbTEtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.3AX0wOlI-7C3VpmzhK6CJCaBiDXilwjISe4HgKLGogI/image;s=148x110",
+                "2": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImZ6djgzYjlveTRlbTEtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.3AX0wOlI-7C3VpmzhK6CJCaBiDXilwjISe4HgKLGogI/image;s=320x240",
+                "4": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImZ6djgzYjlveTRlbTEtQVVUT1ZJVFJPIn0.wSs0rwyM2AFz_Ooh3N_DEFmQv-ZJSJxcRAxAei9ajLU/image;s=1280x800"
+            },
+            {
+                "3": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6Ijc0ZjdxMDkwNTJ4dy1BVVRPVklUUk8iLCJ3IjpbeyJmbiI6InE3bXo1M2JpZnB6ay1BVVRPVklUUk8iLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.sKFIc8LzOrLJVnxezhd9mkAyURa7uF-9g2uLMnDv4pg/image;s=1080x720",
+                "0": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6Ijc0ZjdxMDkwNTJ4dy1BVVRPVklUUk8iLCJ3IjpbeyJmbiI6InE3bXo1M2JpZnB6ay1BVVRPVklUUk8iLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.sKFIc8LzOrLJVnxezhd9mkAyURa7uF-9g2uLMnDv4pg/image;s=732x488",
+                "1": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6Ijc0ZjdxMDkwNTJ4dy1BVVRPVklUUk8iLCJ3IjpbeyJmbiI6InE3bXo1M2JpZnB6ay1BVVRPVklUUk8iLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.sKFIc8LzOrLJVnxezhd9mkAyURa7uF-9g2uLMnDv4pg/image;s=148x110",
+                "2": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6Ijc0ZjdxMDkwNTJ4dy1BVVRPVklUUk8iLCJ3IjpbeyJmbiI6InE3bXo1M2JpZnB6ay1BVVRPVklUUk8iLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.sKFIc8LzOrLJVnxezhd9mkAyURa7uF-9g2uLMnDv4pg/image;s=320x240",
+                "4": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6Ijc0ZjdxMDkwNTJ4dy1BVVRPVklUUk8ifQ.L8RJqfIc1QDEx5VLPyptdSYtfJkOYz4iUrSqr2EQ5LY/image;s=1280x800"
+            },
+            {
+                "3": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjFhbmpzNndwOWxyYjEtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.v7V7fJI4ozhUYNUSEUumQ94cyUEZ1T85EiSQCEjCxGw/image;s=1080x720",
+                "0": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjFhbmpzNndwOWxyYjEtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.v7V7fJI4ozhUYNUSEUumQ94cyUEZ1T85EiSQCEjCxGw/image;s=732x488",
+                "1": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjFhbmpzNndwOWxyYjEtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.v7V7fJI4ozhUYNUSEUumQ94cyUEZ1T85EiSQCEjCxGw/image;s=148x110",
+                "2": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjFhbmpzNndwOWxyYjEtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.v7V7fJI4ozhUYNUSEUumQ94cyUEZ1T85EiSQCEjCxGw/image;s=320x240",
+                "4": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjFhbmpzNndwOWxyYjEtQVVUT1ZJVFJPIn0.7Lt1QNwr4mifsoVe68BNjpYO3x8EDF10f4qoHNFehH4/image;s=1280x800"
+            },
+            {
+                "3": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImM3NXNyZjAwcDRjZjEtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.JrNF3dy2AusqN0q5a9MXebypj-SehmQC2N02bclALSE/image;s=1080x720",
+                "0": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImM3NXNyZjAwcDRjZjEtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.JrNF3dy2AusqN0q5a9MXebypj-SehmQC2N02bclALSE/image;s=732x488",
+                "1": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImM3NXNyZjAwcDRjZjEtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.JrNF3dy2AusqN0q5a9MXebypj-SehmQC2N02bclALSE/image;s=148x110",
+                "2": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImM3NXNyZjAwcDRjZjEtQVVUT1ZJVFJPIiwidyI6W3siZm4iOiJxN216NTNiaWZwemstQVVUT1ZJVFJPIiwicyI6IjE2IiwicCI6IjEwLC0xMCIsImEiOiIwIn1dfQ.JrNF3dy2AusqN0q5a9MXebypj-SehmQC2N02bclALSE/image;s=320x240",
+                "4": "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImM3NXNyZjAwcDRjZjEtQVVUT1ZJVFJPIn0.5t3ZZp3bEUJ_H4st8Q7b3hpq3B2pdjL4rvVmxny5fqc/image;s=1280x800"
+            }
+        ],
+        "ad_homepage": false,
+        "ads_bighomepage": false,
+        "ad_featured": 0,
+        "hasDealerPackageMapFeature": false
+    }
+]

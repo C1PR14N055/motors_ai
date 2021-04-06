@@ -38,6 +38,7 @@ class Tools():
             Tools.pretty_print(log)
             Tools.speak(log)
 
+    @staticmethod
     def random_str(length=8):
         return ''.join(
             random.choice(
@@ -46,15 +47,18 @@ class Tools():
             for _ in range(length)
         )
 
+    @staticmethod
     def strip_number(numberString):
         nr = numberString.replace(' ', '')
         nr = re.findall('\\d+', nr)[0]
         nr = int(nr)
         return nr
 
+    @staticmethod
     def similar(a, b):
         return SequenceMatcher(None, a, b).ratio()
 
+    @staticmethod
     def speak(what):
         Tools.log(what, Tools.LOG_LEVEL_HIGH)
         if sys.platform.startswith('linux'):
@@ -64,11 +68,12 @@ class Tools():
         elif sys.platform.startswith('darwin'):
             os.system('say \'{0}\''.format(what))
 
+    @staticmethod
     def timestamp():
         return int(time.time())
 
+    @staticmethod
     def pretty_print(log):
-        print('*' * 42)
         if type(log) == dict:
             pprint.pformat(log)
         else:

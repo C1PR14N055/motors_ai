@@ -14,49 +14,45 @@ import time
 
 class Scrapy:
     shelf = Shelf()
-    transformer = Transformer()
+    # transformer = Transformer()
 
     def __init__(self, pages_to_scrape=1):
         self.pages_to_scrape = pages_to_scrape
-
-    def _save_ads_debug(self, adverts):
-        with open('ads_debug.json', 'w') as f:
-            f.write(json.dumps(adverts))
 
     def run(self):
         try:
             total_previously_adverts = len(self.shelf.known_ids)
             time_start = time.time()
+            new_adverts = []
             for p in range(1, self.pages_to_scrape + 1):
-                ads = FakeBrowser.steal_adverts(p)
-                self._save_ads_debug(ads)
-                for ad in ads:
-                    if ad['id'] not in self.shelf.known_ids:  # unique ads only
-                        advert, status = self.transformer.to_auto(ad)
-                        self.shelf.known_ids.append(advert.AVID)
-                        self.shelf.pickle_ids(self.shelf.known_ids)
-                        if status:
-                            self.shelf.adverts_ok.append(advert)
-                        else:
-                            self.shelf.adverts_err.append(advert)
-                        self.shelf.pickle_adverts(
-                            self.shelf.adverts_ok,
-                            self.shelf.adverts_err
-                        )
-                    else:
-                        Tools.log(
-                            '++ Skipping %s - %s, not unique'
-                            % (ad['title'], ad['id']), Tools.LOG_LEVEL_HIGH
-                        )
-            Tools.log('*' * 80, Tools.LOG_LEVEL_HIGH)
-            res = 'Scraped %d new adverts in %d seconds' \
+                # adverts in one page
+                adverts = FakeBrowser.steal_adverts(p)
+                # filter adverts for already seen ones
+                adverts = [adv for adv in adverts if adv['id']
+                           not in self.shelf.known_ids]
+                Tools.log('++ Got %d new adverts' % len(adverts))
+                # append filtered to new_adverts
+                new_adverts.extend(adverts)
+
+            # save last known ids
+            self.shelf.known_ids.extend(
+                [advert['id'] for advert in new_adverts]
+            )
+            self.shelf.serialize_ids(self.shelf.known_ids)
+
+            # save last ads for debug
+            self.shelf.save_ads_debug(new_adverts)
+
+            # save lastest scraped ads
+            self.shelf.serialize_adverts(new_adverts)
+
+            res = 'Scraped a total of %d new adverts in %d seconds' \
                 % (
                     (len(self.shelf.known_ids) - total_previously_adverts),
                     (time.time() - time_start)
                 )
-            Tools.log('-- %s --' % res, Tools.LOG_LEVEL_HIGH)
+            Tools.log('++ %s ++' % res, Tools.LOG_LEVEL_HIGH)
             Tools.speak(res)
-            Tools.log('*' * 80, Tools.LOG_LEVEL_HIGH)
         except Exception as e:
             Tools.speak('I\'m sorry but I failed!')
             raise(e)

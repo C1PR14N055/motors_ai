@@ -24,7 +24,7 @@ class Jarvis():
         # self.dataframe.columns = self.dataframe.columns.str.strip()
         # show dataframe head all columns
         # pd.set_option('max_columns', None)
-        Tools.log('** Available dataframes **')
+        Tools.log('** Available dataframes')
         Tools.log(self.dataframe.describe())
 
     def plot_price(self):

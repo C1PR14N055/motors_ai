@@ -10,9 +10,11 @@ if sys.version_info[0] < 3:
 
 # TODO: args parse
 
-EXEC_SCRAPY = True
-PAGES_TO_SCRAPE = 5
+EXEC_SCRAPY = not True
+PAGES_TO_SCRAPE = 1
 EXEC_JARVIS = True
+# TODO: more plots
+JARVIS_SHOW_PLOTS = False
 '''
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 TO TEST A CAR GET BrandID FROM `data/brands.json`
@@ -23,7 +25,7 @@ TEST_CAR = [
     14,     # BrandID, bmw
     177,    # ModelID, series 3
     2010,   # fab year
-    13,     # CityID, 13 = Arad (categorical data?)
+    # 13,     # CityID, 13 = Arad (categorical data?)
     6,      # PollutionNormID, 6 = Euro 5
     9,      # CountryID, 9 = Germany
     3,      # Status, 3 = used
@@ -32,10 +34,10 @@ TEST_CAR = [
     True,   # ParticleFilter
     True,   # MetallicColor
     False,  # FirstOwner
-    False,  # NoAccidents
+    True,  # NoAccidents
     False,  # Tuning
-    False,  # Negotiable
-    2000,   # CubicCapacity
+    True,  # Negotiable
+    1995,   # CubicCapacity
     240000,  # KmNumber
     184,    # HorsePoser
     4       # DoorsNumber (TODO: merge 2/3 && 4/5)
@@ -46,8 +48,9 @@ if EXEC_SCRAPY:
     scrapy.run()
 if EXEC_JARVIS:
     jarvis = Jarvis()
-    jarvis.plot_years()
-    jarvis.plot_hp()
+    if JARVIS_SHOW_PLOTS:
+        jarvis.plot_years()
+        jarvis.plot_hp()
     jarvis.build_model()
     predicted = jarvis.predict(TEST_CAR)
     Tools.log('** Predicted price for **')

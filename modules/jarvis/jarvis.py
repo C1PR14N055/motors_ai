@@ -1,3 +1,4 @@
+from numpy.core.shape_base import block
 from core import Config
 from ..utils import Tools
 from ..storage import Shelf
@@ -20,11 +21,26 @@ class Jarvis():
         sea.set()
 
         # safety trim
-        self.dataframe.columns = self.dataframe.columns.str.strip()
+        # self.dataframe.columns = self.dataframe.columns.str.strip()
         # show dataframe head all columns
-        pd.set_option('max_columns', None)
+        # pd.set_option('max_columns', None)
         Tools.log('** Available dataframes **')
-        Tools.log(self.dataframe.head())
+        Tools.log(self.dataframe.describe())
+
+    def plot_price(self):
+        plt.figure(figsize=(20, 8))
+
+        plt.subplot(1, 2, 1)
+        plt.title('Car Price Distribution Plot')
+        sea.distplot(self.dataframe['Price'])
+
+        plt.subplot(1, 2, 2)
+        plt.title('Car Price Spread')
+        sea.boxplot(y=self.dataframe['Price'])
+
+        plt.show()
+        print(self.dataframe['Price'].describe(percentiles=[
+              0.25, 0.50, 0.75, 0.85, 0.90, 1]))
 
     def plot_years(self):
         # vs price scale
@@ -33,6 +49,16 @@ class Jarvis():
             pd.cut(self.dataframe['FabricationYear'], ys_bins)
         ).median()
         ys.plot(x='FabricationYear', y='Price')
+        plt.show(block=True)
+
+    def plot_km(self):
+        import seaborn as sea
+        sea.boxplot(x=self.dataframe['KmNumber'])
+        # km_bins = np.arange(0, 500000, 50000)
+        # km = self.dataframe.groupby(
+        #     pd.cut(self.dataframe['KmNumber'], km_bins)
+        # ).median()
+        # km.plot.scatter(x='KmNumber', y='Price')
         plt.show(block=True)
 
     def plot_hp(self):
@@ -53,25 +79,25 @@ class Jarvis():
         # important features selection
         X = self.dataframe.loc[:,
                                (
-                                   'BrandID',
-                                   'BrandModelID',
-                                   'FabricationYear',
-                                   'CityID',
-                                   'PollutionNormID',
-                                   'CountryID',
-                                   'Status',
-                                   'Matriculated',
-                                   'ServiceBook',
-                                   'ParticleFilter',
-                                   'MetallicColor',
-                                   'FirstOwner',
-                                   'NoAccidents',
-                                   'Tuning',
-                                   'Negotiable',
-                                   'CubicCapacity',
+                                   #    'BrandID',
+                                   #    'BrandModelID',
+                                   #    'FabricationYear',
+                                   # 'CityID',
+                                   #    'PollutionNormID',
+                                   #    'CountryID',
+                                   #    'Status',
+                                   #    'Matriculated',
+                                   #    'ServiceBook',
+                                   #    'ParticleFilter',
+                                   #    'MetallicColor',
+                                   #    'FirstOwner',
+                                   #    'NoAccidents',
+                                   #    'Tuning',
+                                   #    'Negotiable',
+                                   #    'CubicCapacity',
                                    'KmNumber',
-                                   'HorsePower',
-                                   'DoorsNumber',
+                                   #    'HorsePower',
+                                   #    'DoorsNumber',
                                )
                                ]
 
@@ -86,47 +112,47 @@ class Jarvis():
         '''
         X.loc[:,
               (
-                  'BrandID',
-                  'BrandModelID',
-                  'FabricationYear',
-                  'CityID',
-                  'PollutionNormID',
-                  'CountryID',
-                  'Status',
-                  'Matriculated',
-                  'ServiceBook',
-                  'ParticleFilter',
-                  'MetallicColor',
-                  'FirstOwner',
-                  'NoAccidents',
-                  'Tuning',
-                  'Negotiable',
-                  'CubicCapacity',
+                  #   'BrandID',
+                  #   'BrandModelID',
+                  #   'FabricationYear',
+                  # 'CityID',
+                  #   'PollutionNormID',
+                  #   'CountryID',
+                  #   'Status',
+                  #   'Matriculated',
+                  #   'ServiceBook',
+                  #   'ParticleFilter',
+                  #   'MetallicColor',
+                  #   'FirstOwner',
+                  #   'NoAccidents',
+                  #   'Tuning',
+                  #   'Negotiable',
+                  #   'CubicCapacity',
                   'KmNumber',
-                  'HorsePower',
-                  'DoorsNumber',
+                  #   'HorsePower',
+                  #   'DoorsNumber',
               )
               ] = self.scale.fit_transform(
             X[[
-                'BrandID',
-                'BrandModelID',
-                'FabricationYear',
-                'CityID',
-                'PollutionNormID',
-                'CountryID',
-                'Status',
-                'Matriculated',
-                'ServiceBook',
-                'ParticleFilter',
-                'MetallicColor',
-                'FirstOwner',
-                'NoAccidents',
-                'Tuning',
-                'Negotiable',
-                'CubicCapacity',
+                # 'BrandID',
+                # 'BrandModelID',
+                # 'FabricationYear',
+                # 'CityID',
+                # 'PollutionNormID',
+                # 'CountryID',
+                # 'Status',
+                # 'Matriculated',
+                # 'ServiceBook',
+                # 'ParticleFilter',
+                # 'MetallicColor',
+                # 'FirstOwner',
+                # 'NoAccidents',
+                # 'Tuning',
+                # 'Negotiable',
+                # 'CubicCapacity',
                 'KmNumber',
-                'HorsePower',
-                'DoorsNumber',
+                # 'HorsePower',
+                # 'DoorsNumber',
             ]].values
         )
 

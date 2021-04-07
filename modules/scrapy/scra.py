@@ -30,7 +30,7 @@ class Scrapy:
                 # filter adverts for already seen ones
                 adverts = [adv for adv in adverts if adv['id']
                            not in self.shelf.known_ids]
-                Tools.log('++ Got %d new adverts' % len(adverts))
+                Tools.log('++ Got %d new adverts' % len(new_adverts))
                 # append filtered to new_adverts
                 new_adverts.extend(adverts)
 
@@ -51,7 +51,7 @@ class Scrapy:
                     (len(self.shelf.known_ids) - total_previously_adverts),
                     (time.time() - time_start)
                 )
-            Tools.log('++ %s ++' % res, Tools.LOG_LEVEL_HIGH)
+            Tools.log('++ %s' % res, Tools.LOG_LEVEL_HIGH)
             Tools.speak(res)
         except Exception as e:
             Tools.speak('I\'m sorry but I failed!')

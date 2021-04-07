@@ -50,19 +50,3 @@ if EXEC_JARVIS:
     jarvis.build_model()
     prediction = jarvis.predict(TEST_CAR)
     Tools.log('** Predicted price for ==> {} EUR'.format(prediction))
-
-# shelf = Shelf()
-# # x = shelf.unpickle_ids()
-# # shelf.serialize_ids(x)
-# # jx = shelf.deserialize_ids()
-# # Tools.log(x[:10])
-# # Tools.log(jx[:10])
-
-
-# adv_ok, adv_err = shelf.unpickle_adverts()
-# Tools.log('adv_ok[:10]')
-# Tools.log(adv_ok[:10])
-# shelf.serialize_adverts(adv_ok, adv_err)
-# jadv = shelf.deserialize_adverts()
-# Tools.log('jadv[:10]')
-# Tools.log(jadv[:1])

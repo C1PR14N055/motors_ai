@@ -81,7 +81,7 @@ class Shelf(metaclass=Singleton):
                 file = os.path.join(root, name)
                 Tools.log('++ Loading: {}'.format(name))
                 with gzip.open(file, 'r') as fin:
-                    adverts.append(json.loads(fin.read().decode('utf-8')))
+                    adverts.extend(json.loads(fin.read().decode('utf-8')))
             return adverts
         else:
             return []

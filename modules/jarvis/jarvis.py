@@ -14,8 +14,7 @@ from sklearn.preprocessing import StandardScaler
 class Jarvis():
     def __init__(self):
         self.shelf = Shelf()
-        self.adverts_ok, self.adverts_err = self.shelf.unpickle_adverts()
-        self.dataframe = pd.DataFrame([x.__dict__ for x in self.adverts_ok])
+        self.dataframe = pd.DataFrame(self.shelf.deserialize_adverts())
         self.scale = None
         self.model = None
         sea.set()
@@ -26,51 +25,6 @@ class Jarvis():
         # pd.set_option('max_columns', None)
         Tools.log('** Available dataframes')
         Tools.log(self.dataframe.describe())
-
-    def plot_price(self):
-        plt.figure(figsize=(20, 8))
-
-        plt.subplot(1, 2, 1)
-        plt.title('Car Price Distribution Plot')
-        sea.distplot(self.dataframe['Price'])
-
-        plt.subplot(1, 2, 2)
-        plt.title('Car Price Spread')
-        sea.boxplot(y=self.dataframe['Price'])
-
-        plt.show()
-        print(self.dataframe['Price'].describe(percentiles=[
-              0.25, 0.50, 0.75, 0.85, 0.90, 1]))
-
-    def plot_years(self):
-        # vs price scale
-        ys_bins = np.arange(2000, 2022, 2)
-        ys = self.dataframe.groupby(
-            pd.cut(self.dataframe['FabricationYear'], ys_bins)
-        ).median()
-        ys.plot(x='FabricationYear', y='Price')
-        plt.show(block=True)
-
-    def plot_km(self):
-        import seaborn as sea
-        sea.boxplot(x=self.dataframe['KmNumber'])
-        # km_bins = np.arange(0, 500000, 50000)
-        # km = self.dataframe.groupby(
-        #     pd.cut(self.dataframe['KmNumber'], km_bins)
-        # ).median()
-        # km.plot.scatter(x='KmNumber', y='Price')
-        plt.show(block=True)
-
-    def plot_hp(self):
-        # vs price
-        hp_bins = np.arange(50, 250, 30)
-        hp = self.dataframe.groupby(
-            pd.cut(self.dataframe['HorsePower'], hp_bins)
-        ).mean()
-        hp[['HorsePower', 'Price']].plot.line(
-            x='HorsePower', y='Price'
-        )
-        plt.show(block=True)
 
     # TODO: save model and scale
     def build_model(self):

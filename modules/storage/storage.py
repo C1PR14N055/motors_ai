@@ -71,7 +71,10 @@ class Shelf(metaclass=Singleton):
             pass
 
         filename = self._filename_now('{}_adverts'.format(len(adverts)))
-        with gzip.open(os.path.join('database/autovit/adverts', filename).format(), 'w') as fout:
+        with gzip.open(
+            os.path.join('database/autovit/adverts', filename),
+            'w'
+        ) as fout:
             fout.write(json.dumps(adverts).encode('utf-8'))
 
     def deserialize_adverts(self):

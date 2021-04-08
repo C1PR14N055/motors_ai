@@ -8,10 +8,11 @@ import sys
 if sys.version_info[0] < 3:
     raise Exception('Must be ran using python 3!')
 
+# TODO: save data on crash / REQ LIMIT
 # TODO: args parse
 
 EXEC_SCRAPY = True
-PAGES_TO_SCRAPE = 500
+PAGES_TO_SCRAPE = 100
 EXEC_JARVIS = not True
 
 if EXEC_SCRAPY:
